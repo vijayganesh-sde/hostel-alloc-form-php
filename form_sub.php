@@ -15,3 +15,7 @@
   mysqli_query($conn, $query);
   echo "<script> alert('Data added Successfully') </script>";
 ?>
+Click here to 
+<a href="/">
+    Home Page
+</a>
