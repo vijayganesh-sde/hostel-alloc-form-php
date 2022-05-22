@@ -1,10 +1,17 @@
+<?php 
+  require 'connector.php';
+?>
 <!DOCTYPE html>
 <html>
 <body>
   <div class="top">
     <a class="tit" href="/">UG-1 HOSTEL ALLOTMENT FORM<a>
-    <a class="reg" href="/register.php">Register</a>
-    <a class="login" href="/login.php">Login</a>
+    <div class="dropdown"><a class="prof">Profile</a>
+      <div class="dropdown-content">
+        <img src="https://discountdoorhardware.ca/wp-content/uploads/2018/06/profile-placeholder-3.jpg" style="height:200px;width:250px" />
+        <a class="drop"><?php echo "You are signed in as $mail_val";?></a>
+      </div>
+    </div>
   </div><br />
   <div class="form">
     <form action="form_sub.php" method="post">
@@ -32,6 +39,7 @@
       padding-top:20px;
       padding-left:20px;
       height:50px;
+      color:#fff;
     }
     body{
       background-color: #101010;
@@ -40,6 +48,7 @@
     .form{
       margin-left:30%;
       height:1000px;
+      color:#fff;
     }
     .reg {
       margin-left:85%;
@@ -48,12 +57,30 @@
       color:white;
       text-decoration:none;
     }
-    .login{
-      margin-left:92%;
+    .drop{
+      color:#fff;
+    }
+    .prof{
+      color:#fff;
+    }
+    .dropdown:hover .dropdown-content {display: block;}
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    height:250px;
+    color:#fff;
+    }
+    .dropdown{
+      margin-left:85%;
       position:relative;
-      bottom:65%;
-      color:white;
+      bottom:30%;
+      color:#fff;
       text-decoration:none;
+      display: inline-block;
     }
     .tit{
       color:#fff;

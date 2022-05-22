@@ -1,20 +1,49 @@
 <?php
-    $servername="localhost";
-    $user="root";
-    $pass="yes";
-    $db="test_db";
-    //$conn = new PDO("mysql:host=$servername;dbname=$db", $user, $pass);
-    $conn = new mysqli('localhost', $user , $pass , $db );
-    //$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "<script> alert('afterdb') </script>";
-    echo "<script> alert('Values added') </script>";
-    //mysqli_query($conn, "CREATE TABLE IF NOT EXISTS hostel_info( name VARCHAR(255), roll_no INT, gender VARCHAR(255), WebmailId VARCHAR(255), phone_no BIGINT, hostel_choice VARCHAR(255)");
-    echo "<script> alert('table is therer') </script>";
-    $query="INSERT into hostel_info VALUES ('sdfd','23','sf','sfs','2343242','Jade')";
-    if($query){
-      echo "<script> alert('query accepted') </script>";
-    }
-    mysqli_query($conn,$query);
-    //$conn->exec($query);
-    echo "<script> alert('Data added Successfully') </script>";
+  require 'connect.php';       
+  if (isset($_POST['reg_sub'])){
+      $email=$_POST['email'];
+      $pass=$_POST['pass'];
+      $repass=$_POST['repass'];
+      if (($pass!=$repass) and ($email!=null)){
+        echo "<script> alert('Passwords did not match') </script>";
+      }
+      else{
+        $query="INSERT into register VALUES('$email','$pass')";
+        mysqli_query($conn, $query);
+        echo "<script> alert('Data added Successfully') </script>";
+        header("location:/profile.php");
+      }
+  }
 ?>
+<html>
+  <body>
+  <div class="top">
+    <a class="tit" href="/">UG-1 HOSTEL ALLOTMENT FORM<a>
+  </div>
+  <div class="form">
+    <form action="" method="post">
+      Email ID*<br /><input type="text" style="width:300px;height:25px;background-color:#000;color:#808080" name="email" placeholder="Your WebmailID..." required /><br /><br />
+      Password*<br /><input type="text" style="width:300px;height:25px;background-color:#000;color:#808080" name="pass" placeholder="Your NITT Roll No..." required /><br /><br />
+      Re-Enter Password<br /><input type="text" style="width:300px;height:25px;background-color:#000;color:#808080" name="repass" placeholder="Your NITT Roll No..." required /><br /><br />
+      <button type="submit" name="reg_sub">Register</button>
+    </form></div>
+  </body>
+  <style>
+    .form{
+      margin-left:30%;
+      height:1000px;
+      color:#fff;
+    }
+    .top{
+      background-color: #404040;
+      text-align: left;
+      padding-top:20px;
+      padding-left:20px;
+      height:50px;
+    }
+    .tit{
+      color:#fff;
+      text-decoration:none;
+    }
+  </style>
+</html>
