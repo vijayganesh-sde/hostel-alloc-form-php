@@ -18,13 +18,13 @@
 <html>
   <body>
   <div class="top">
-    <a class="tit" href="/">UG-1 HOSTEL ALLOTMENT FORM<a>
+    <a class="tit" href="/">UG-1 HOSTEL ALLOTMENT FORM</a>
   </div>
   <div class="form">
     <form action="" method="post">
       Email ID*<br /><input type="text" style="width:300px;height:25px;background-color:#000;color:#808080" name="email" placeholder="Your WebmailID..." required /><br /><br />
-      Password*<br /><input type="text" style="width:300px;height:25px;background-color:#000;color:#808080" name="pass" placeholder="Your NITT Roll No..." required /><br /><br />
-      Re-Enter Password<br /><input type="text" style="width:300px;height:25px;background-color:#000;color:#808080" name="repass" placeholder="Your NITT Roll No..." required /><br /><br />
+      Password*<br /><input type="password" style="width:300px;height:25px;background-color:#000;color:#808080" name="pass" placeholder="Your Password..." required /><br /><br />
+      Re-Enter Password<br /><input type="password" style="width:300px;height:25px;background-color:#000;color:#808080" name="repass" placeholder="Your Password..." required /><br /><br />
       <button type="submit" name="reg_sub">Register</button>
     </form></div>
   </body>

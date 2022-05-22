@@ -8,8 +8,8 @@
     <a class="tit" href="/">UG-1 HOSTEL ALLOTMENT FORM<a>
     <div class="dropdown"><a class="prof">Profile</a>
       <div class="dropdown-content">
-        <img src="https://discountdoorhardware.ca/wp-content/uploads/2018/06/profile-placeholder-3.jpg" style="height:200px;width:250px" />
-        <a class="drop"><?php echo "You are signed in as $mail_val";?></a>
+        <img src="https://discountdoorhardware.ca/wp-content/uploads/2018/06/profile-placeholder-3.jpg" style="height:150px;width:200px" />
+        <a class="drop">You are signed in as</a><a class="drop_user"><?php echo $mail_val;?></a>
       </div>
     </div>
   </div><br />
@@ -59,6 +59,15 @@
     }
     .drop{
       color:#fff;
+      font-size:20px;
+      margin-left:20px;
+      display:block;
+    }
+    .drop_user{
+      color:#fff;
+      font-size:20px;
+      padding-right:70%;
+      padding-left:30%;
     }
     .prof{
       color:#fff;
@@ -68,10 +77,10 @@
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    width: 250px;
+    width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    height:250px;
+    height:200px;
     color:#fff;
     }
     .dropdown{
